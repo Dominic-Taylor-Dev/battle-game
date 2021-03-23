@@ -1,0 +1,15 @@
+<style>
+  h2 { color:#ff0066;
+   font-family: verdana}
+</style>
+
+<h2><%= @current_player %> attacked <%= @previous_player %>!</h2>
+<h2><%=@current_player%> has <%=@player_1_hp%>HP</h2>
+<h2><%=@previous_player%> has <%=@player_2_hp%>HP</h2>
+
+<h2> It is now <%= @previous_player %>'s turn</h2>
+
+
+<form action="/battle" method="post">
+<input type="submit" name ="Attack" value="attack">
+</form>

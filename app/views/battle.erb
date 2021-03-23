@@ -1,1 +1,20 @@
-<%= @player_1_name %> vs. <%= @player_2_name %>
+<style>
+h1 { color:#99cc00;
+font-family: verdana }
+
+h2 { color:#00ccff;
+font-family: verdana}
+</style>
+
+<h1>PLAYER 1: <%=@player_1_name%></h1>
+</b>
+<h1>PLAYER 2: <%=@player_2_name%></h1>
+
+<h2><%=@player_1_name%> has <%=@player_1_hp%>HP</h2>
+<h2><%=@player_2_name%> has <%=@player_2_hp%>HP</h2>
+
+<h2>It is <%=@current_player%>'s turn to attack</h2>
+
+<form action="/attack" method="post">
+<input type="submit" name ="attack" value="Attack">
+</form>
