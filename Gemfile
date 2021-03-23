@@ -8,5 +8,6 @@ gem 'sinatra'
 gem 'capybara'
 gem 'selenium-webdriver'
 gem 'rspec'
+gem 'sinatra-contrib'
 
 # gem "rails"
