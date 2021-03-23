@@ -12,14 +12,14 @@ class Game
   end
 
   def next_turn
-    turn_tracker.next_turn
+    @turn_tracker.change_player
   end
 
   def attack
-    turn_tracker.next_player?.take_damage # which changes the player instance's hitpoints and returns nothing
+    @turn_tracker.next_player?.take_damage # CHECK
   end
 
   def game_over?
-    turn_tracker.current_player?.hitpoints <= 0
+    @turn_tracker.current_player?.hitpoints <= 0
   end
 end

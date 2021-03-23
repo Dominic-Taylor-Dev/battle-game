@@ -1,21 +1,22 @@
 class TurnTracker
   def initialize(player_1, player_2)
-    @player_1 = player_1
-    @player_2 = player_2
-    @current_player = @player_1
-   end
+    @players = [player_1, player_2]
+    @current_player = @players.sample #randomized starting player
+  end
 
   def current_player?
     @current_player
   end
 
   def next_player?
-    @current_player == @player_1 ? @player_2 : @player_1 # these locations in the array are players 1 and 2 respectively
+    @current_player == @players[0] ? @players[1] : @players[0]
   end
 
-  def next_turn
-    if @current_player == @player_1
-      @current_player = @player_2
+  def change_player
+    if @current_player == @players[1]
+      @current_player = @players[0]
+    else
+      @current_player = @players[1]
     end
   end
 end

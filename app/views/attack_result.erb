@@ -3,13 +3,13 @@
    font-family: verdana}
 </style>
 
-<h2><%= @current_player %> attacked <%= @previous_player %>!</h2>
-<h2><%=@current_player%> has <%=@player_1_hp%>HP</h2>
-<h2><%=@previous_player%> has <%=@player_2_hp%>HP</h2>
+<h2><%= @current_player %> attacked <%= @next_player %>!</h2>
+<h2><%=@player_1_name%> has <%=@player_1_hp%>HP</h2>
+<h2><%=@player_2_name%> has <%=@player_2_hp%>HP</h2>
 
-<h2> It is now <%= @previous_player %>'s turn</h2>
+<h2> It is now <%= @next_player %>'s turn</h2>
 
 
-<form action="/battle" method="post">
-<input type="submit" name ="Attack" value="attack">
+<form action="/next-attack" method="post">
+<input type="submit" name ="Attack" value="Attack">
 </form>
