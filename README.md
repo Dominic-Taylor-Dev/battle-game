@@ -78,7 +78,7 @@ This last element - the interface - was based on a provided mock-up of how the a
 
 ![Interface mock-up](assets/battle_final_mockup.png)
 
-I did originally follow this specification (broadly...!) but in the end, I was keen to include some genuine Pokemon game sprites, (sourced <a href='https://pokemondb.net/sprites'>here</a>) and they were facing laft/right in accordance with the original Pokemon games. I guess it would have been possible to use CSS transformations to flip them, but since this was just for fun, I decided to go with something closer to the original Pokemon layout:
+I did originally follow this specification (broadly...!) but in the end, I was keen to include some genuine Pokemon game sprites, (sourced <a href='https://pokemondb.net/sprites'>here</a>) and they were facing left/right in accordance with the original Pokemon games. I guess it would have been possible to use CSS transformations to flip them, but since this was just for fun, I decided to go with something closer to the original Pokemon layout:
 
 ![Screenshot](assets/screenshot.jpg)
 

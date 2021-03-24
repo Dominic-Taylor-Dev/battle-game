@@ -1,6 +1,10 @@
 <style>
 h1 { color:black;
-font-family: 'Courier New' }
+font-family: 'Courier New'; 
+border: 2px solid #ddd;
+border-radius: 10px;
+padding: 10px;
+background-color: #E5D3B3;}
 
 h2 { color:black;
 font-family: 'Courier New'}
@@ -40,11 +44,11 @@ background-color: black;
 }
 </style>
 
-<h1><i>BATTLE...!:</i></h1>
+<h1><i>BATTLE...!</i></h1>
 
 <div class="row">
   <div class="column" id='top_left' align='left'>
-    <h1><%=@player_1_name%> VS.<br> <%=@player_2_name%></h1>
+  <h2></h2>
   </div>  
   
   <div class="column" id='top_right' align='left'>
@@ -64,15 +68,13 @@ background-color: black;
 <div class="row">
   <div class="column" id='bottom_left' align='left'>
     <h2><i>Current player (<%=@current_player%>):</i></h2>
-
+    <h2><%=@current_player_hp%> / <%=@current_player_hp_max%></h2>
+    <progress id="current_player_health_bar" value=<%=@current_player_hp%> max=<%=@current_player_hp_max%> ></progress><br><br>
       <% if @next_player ==  @player_1_name%>
         <img class="avatars" src = <%=@player_1_avatar_back%>>
       <% else %> 
         <img class="avatars" src = <%=@player_2_avatar_back%>>
       <% end %>
-
-    <h2><%=@current_player_hp%> / <%=@current_player_hp_max%></h2>
-    <progress id="current_player_health_bar" value=<%=@current_player_hp%> max=<%=@current_player_hp_max%> ></progress>
   </div>
 
   <div class="column" id='bottom_right' align='left'>
