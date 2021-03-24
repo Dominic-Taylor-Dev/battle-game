@@ -1,4 +1,4 @@
-Battle App
+Battle App (Pokemon Theme)
 ===========
 
 ![Charmander sprite](assets/sprites/charmander-battle-front.gif)
