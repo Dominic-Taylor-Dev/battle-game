@@ -1,9 +1,13 @@
 <style>
 h1 { color:black;
-font-family: verdana }
+font-family: 'Courier New' }
 
 h2 { color:black;
-font-family: verdana}
+font-family: 'Courier New'}
 </style>
 
-<h2>Game over: <%=@next_player%> won!!!</h2>
+<h1>Game over: <%=@next_player%> won!!!</h1>
+
+<form action="/" method="get" id='form1'>
+</form>
+<button type="submit" form="form1" value="Submit">Play again</button>

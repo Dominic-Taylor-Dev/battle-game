@@ -11,7 +11,7 @@ class Player
     @hitpoints = hitpoints
   end
 
-  def take_damage
-    @hitpoints -= Attack.new.attack_strength
+  def take_damage(attack_type)
+    @hitpoints -= Attack.new(attack_type).attack_strength
   end
 end

@@ -1,18 +1,41 @@
 <style>
 h1 { color:black;
-font-family: verdana }
+font-family: 'Courier New' }
 
 h2 { color:black;
-font-family: verdana}
+font-family: 'Courier New'}
+
+form { color:black;
+font-family: 'Courier New'}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 </style>
 
-<h2><%= @current_player %> attacked <%= @next_player %>!</h2>
-<h2><%=@player_1_name%> has <%=@player_1_hp%>/<%=@player_1_max_hp%> HP</h2>
-<h2><%=@player_2_name%> has <%=@player_2_hp%>/<%=@player_2_max_hp%> HP</h2>
-
-<h2> It is now <%= @next_player %>'s turn</h2>
-
+<h2><i><%= @current_player %> attacked <%= @next_player %>! It is now <%= @next_player %>'s turn </i></h2>
 
 <form action="/next-attack" method="post">
-<input type="submit" name ="Attack" value="Attack">
+  <input name="attack_type" type="radio" value="attack_1">Clinical hit (deals 10 damage)<br>
+  <input name="attack_type" type="radio" value="attack_2">Wild swing (deals 5-20 damage)<br><br>
+  <input type="submit" value="Submit">
 </form>
+
+ <div class="row">
+  <div class="column">
+    <h1>PLAYER 1: <%=@player_1_name%></h1>
+    <h2><%=@player_1_hp%>/<%=@player_1_max_hp%> HP</h2>
+  </div>
+  <div class="column">
+    <h1>PLAYER 2: <%=@player_2_name%></h1>
+    <h2><%=@player_2_hp%>/<%=@player_2_max_hp%> HP</h2>
+  </div>
+</div> 

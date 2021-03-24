@@ -15,11 +15,11 @@ class Game
     @turn_tracker.change_player
   end
 
-  def attack
-    @turn_tracker.next_player?.take_damage # CHECK
+  def attack(attack_type)
+    @turn_tracker.next_player?.take_damage(attack_type)
   end
 
   def game_over?
-    @turn_tracker.current_player?.hitpoints <= 0
+    @turn_tracker.next_player?.hitpoints <= 0
   end
 end
