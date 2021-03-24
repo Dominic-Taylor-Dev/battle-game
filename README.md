@@ -111,6 +111,10 @@ So I can enjoy my game of Battle,
 I want a sexy user interface
 ```
 
-This last element - the interface - was based on a provided mock-up of how the app might look (provided by Makers). I considered making my own layout, but decided trying to implement to a specification would be more useful:
+This last element - the interface - was based on a provided mock-up of how the app might look (provided by Makers):
 
 ![Interface mock-up](assets/battle_final_mockup.png)
+
+I did originally follow this specification (broadly...!) but in the end, I was keen to include some genuine Pokemon game sprites, (sourced <a href='https://pokemondb.net/sprites'>here</a>) and they were facing laft/right in accordance with the original Pokemon games. I guess it would have been possible to use CSS transformations to flip them, but since this was just for fun, I decided to go with something closer to the original Pokemon layout:
+
+![Screeshot](assets/screenshot.jpg)

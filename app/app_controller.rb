@@ -14,11 +14,19 @@ class Controller < Sinatra::Base
 
   def load_game_state_easy_names
     @player_1_name = $game.player_1.name
+    @player_1_avatar_front = $game.player_1.image_front
+    @player_2_avatar_front = $game.player_2.image_front
+    @player_1_avatar_back = $game.player_1.image_back
+    @player_2_avatar_back = $game.player_2.image_back
     @player_2_name = $game.player_2.name
     @player_1_hp = $game.player_1.hitpoints
     @player_1_max_hp = $game.player_1.max_hp
     @player_2_hp = $game.player_2.hitpoints
     @player_2_max_hp = $game.player_2.max_hp
+    @current_player_hp = $game.turn_tracker.current_player?.hitpoints
+    @current_player_hp_max = $game.turn_tracker.current_player?.max_hp
+    @next_player_hp = $game.turn_tracker.next_player?.hitpoints
+    @next_player_hp_max = $game.turn_tracker.next_player?.max_hp
     @current_player = $game.turn_tracker.current_player?.name
     @next_player = $game.turn_tracker.next_player?.name
   end

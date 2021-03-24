@@ -8,9 +8,28 @@ font-family: 'Courier New'}
 form { color:black;
 font-family: 'Courier New'}
 
+button { color:black;
+font-family: 'Courier New';
+border: 2px solid #ddd;
+border-radius: 10px;
+padding: 10px;
+color: white;
+background-color: black;
+}
+
+.avatars {
+  background-image: url('https://pokemondb.net/pokebase/qa-plugin/https-img-proxy/image.php?key=a36daf060a484b9d&url=http%3A%2F%2Fcdn.bulbagarden.net%2Fupload%2F3%2F36%2FAmie_Steel_Wallpaper.png');
+  height: 200px;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  vertical-align: middle
+}
+
 .column {
   float: left;
   width: 50%;
+  vertical-align: middle
 }
 
 /* Clear floats after the columns */
@@ -21,30 +40,47 @@ font-family: 'Courier New'}
 }
 </style>
 
-<% if @player_1_name == @current_player %>
-  <h2>we know that we want to show player 1 having attacked player 2</h2>
-<% else %> 
-   <h2>we know that we want to show player 2 having attacked player 1</h2>
-<% end %>
-
-<h2><i><%=@current_player%> is first up to attack</i></h2>
-
-<form action="/attack" method="post">
-  <input name="attack_type" type="radio" value="attack_1">Clinical hit (deals 10 damage)<br>
-  <input name="attack_type" type="radio" value="attack_2">Wild swing (deals 5-20 damage)<br><br>
-  <input type="submit" value="Submit">
-</form>
+<h1><i>BATTLE...!:</i></h1>
 
 <div class="row">
-  <div class="column" id='player1_hud'>
-    <h1>PLAYER 1: <%=@player_1_name%></h1>
-    <h2><%=@player_1_hp%>/<%=@player_1_max_hp%> HP</h2>
-    <progress id="player_1_health_bar" value=<%=@player_1_hp%> max=<%=@player_1_max_hp%> ></progress>
+  <div class="column" id='top_left' align='left'>
+    <h1><%=@player_1_name%> VS.<br> <%=@player_2_name%></h1>
+  </div>  
+  
+  <div class="column" id='top_right' align='left'>
+    <h2><i>Opponent (<%=@next_player%>):</i></h2>
+      <% if @current_player ==  @player_1_name%>
+        <img class="avatars" src=<%=@player_1_avatar_front%>>
+      <% else %> 
+        <img class="avatars" src=<%=@player_2_avatar_front%>>
+      <% end %>
+    <h2><%=@next_player_hp%> / <%=@next_player_hp_max%></h2>
+    <progress id="non_current_player_health_bar" value=<%=@next_player_hp%> max=<%=@next_player_hp_max%> ></progress>
+  </div>
+</div> 
+
+<br><br><br>
+
+<div class="row">
+  <div class="column" id='bottom_left' align='left'>
+    <h2><i>Current player (<%=@current_player%>):</i></h2>
+
+      <% if @next_player ==  @player_1_name%>
+        <img class="avatars" src = <%=@player_1_avatar_back%>>
+      <% else %> 
+        <img class="avatars" src = <%=@player_2_avatar_back%>>
+      <% end %>
+
+    <h2><%=@current_player_hp%> / <%=@current_player_hp_max%></h2>
+    <progress id="current_player_health_bar" value=<%=@current_player_hp%> max=<%=@current_player_hp_max%> ></progress>
+  </div>
+
+  <div class="column" id='bottom_right' align='left'>
+    <h2><i>Available attacks:</i></h2>
+    <form action="/attack" method="post">
+      <button name="attack_type" value="attack_1">Clinical Hit</button>
+      <button name="attack_type" value="attack_2">Wild Swing</button>
+    </form>
   </div>
   
-  <div class="column" id='player2_hud'>
-    <h1>PLAYER 2: <%=@player_2_name%></h1>
-    <h2><%=@player_2_hp%>/<%=@player_2_max_hp%> HP</h2>
-    <progress id="player_2_health_bar" value=<%=@player_2_hp%> max=<%=@player_2_max_hp%>></progress>
-  </div>
 </div> 
