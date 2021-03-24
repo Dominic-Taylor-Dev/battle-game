@@ -1,9 +1,16 @@
 <style>
 h1 { color:black;
-font-family: 'Courier New' }
+font-family: 'Courier New';
+display: flex;
+justify-content: center;
+align-items: center; }
 
 h2 { color:black;
-font-family: 'Courier New'}
+font-family: 'Courier New';
+display: flex;
+justify-content: center;
+align-items: center;
+}}
 
 label { color:black;
 font-family: 'Courier New'}
@@ -14,19 +21,20 @@ border: 2px solid #ddd;
 border-radius: 10px;
 padding: 10px;
 color: white;
-background-color: black;
+background-color: gray;
 }
 </style>
 
-<img width="400" src='https://www.pinclipart.com/picdir/big/379-3791327_pokemon-logos-png-vector-pokemon-logo-transparent-background.png'/>
-
+<h1><img class="center" width="400" src='https://www.pinclipart.com/picdir/big/379-3791327_pokemon-logos-png-vector-pokemon-logo-transparent-background.png'/></h1>
 <h1>Please enter your names</h1>
 
+<h2>
 <form action="/form_store" method="post">
   <label for="player_1_name">Player 1:</label><br>
   <input type="text" name="player_1_name" value="Player 1">
   <br><br>
   <label for="player_2_name">Player 2:</label><br>
-  <input type="text" name="player_2_name" value="Player 2">
-  <input type="submit" value="Submit">
+  <input type="text" name="player_2_name" value="Player 2"><br>
+  <h2><input style="background-color: black" type="submit" value="Submit"></h2>
 </form> 
+</h2>
