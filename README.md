@@ -6,6 +6,10 @@ Battle App (Pokemon Theme)
 ![Bulbasaur sprite](assets/sprites/bulbasaur-battle-front.gif)
 ![Pikachu sprite](assets/sprites/pikachu-battle-front.gif)
 
+How to run
+--------
+
+As long as all of the dependencies are installed (see Gemfile), and you are running Ruby 3.0.0, it should be possible to spin up the `app_controller.rb` file (in the `app` directory) by navigating to the directory and running the script with `ruby app_controller.rb`. You should then be able to play the game via your browser (URL: `localhost:4567/` as this is Sinatra, although it should also say which port is being used in the message you get in the terminal)
 
 User stories
 --------
