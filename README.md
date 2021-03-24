@@ -3,6 +3,8 @@ Battle App
 
 ![Charmander sprite](assets/sprites/charmander-battle-front.gif)
 ![Squirtle sprite](assets/sprites/squirtle-battle-front.gif)
+![Bulbasaur sprite](assets/sprites/bulbasaur-battle-front.gif)
+![Pikachu sprite](assets/sprites/pikachu-battle-front.gif)
 
 
 User stories
@@ -56,7 +58,7 @@ Adding more graphics to the interface
 
 One of the interesting things for me about the project was that it was my first foray into using Ruby/Sinatra to interact with logic via browser input/output as opposed to the earlier Ruby command line apps I'd made at Makers Academy. 
 
-For this reason, I continued developing that app past the point where the initial user stories (above) were complete. I followed Makers Academy stretch-goal suggestions (not in order) implementing the following:
+For this reason, I continued developing that app past the point where the initial user stories (above) were complete - specifically in a graphical direction. I followed Makers Academy stretch-goal suggestions (not in order) implementing the following:
 
 ```
 As a Player,
@@ -78,4 +80,6 @@ This last element - the interface - was based on a provided mock-up of how the a
 
 I did originally follow this specification (broadly...!) but in the end, I was keen to include some genuine Pokemon game sprites, (sourced <a href='https://pokemondb.net/sprites'>here</a>) and they were facing laft/right in accordance with the original Pokemon games. I guess it would have been possible to use CSS transformations to flip them, but since this was just for fun, I decided to go with something closer to the original Pokemon layout:
 
-![Screeshot](assets/screenshot.jpg)
+![Screenshot](assets/screenshot.jpg)
+
+Note: The player avatars are chosen at random from a possible list of Charmander, Bulbasaur, Squirtle and Pikachu. If I wanted to make this project more complex, I'd add the possibility to select desired Pokemon to act as avatar from a dropdown on the index screen.
