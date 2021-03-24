@@ -7,7 +7,10 @@ class Controller < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  enable :sessions # needed to ensure persistence of player names
+  # Needed originally to ensure persistence of player names. 
+  # Although not being used here as storing in a global variable
+  # ($game), still keeping for my own future reference on similar projects
+  # enable :sessions 
 
   def load_game_state_easy_names
     @player_1_name = $game.player_1.name

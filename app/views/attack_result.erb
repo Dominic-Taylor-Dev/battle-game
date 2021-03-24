@@ -21,6 +21,12 @@ font-family: 'Courier New'}
 }
 </style>
 
+<% if @player_1_name == @current_player %>
+  <h2>we know that we want to show player 1 having attacked player 2</h2>
+<% else %> 
+   <h2>we know that we want to show player 2 having attacked player 1</h2>
+<% end %>
+
 <h2><i><%= @current_player %> attacked <%= @next_player %>! It is now <%= @next_player %>'s turn </i></h2>
 
 <form action="/next-attack" method="post">
@@ -29,13 +35,16 @@ font-family: 'Courier New'}
   <input type="submit" value="Submit">
 </form>
 
- <div class="row">
+<div class="row">
   <div class="column" id='player1_hud'>
     <h1>PLAYER 1: <%=@player_1_name%></h1>
     <h2><%=@player_1_hp%>/<%=@player_1_max_hp%> HP</h2>
+    <progress id="player_1_health_bar" value=<%=@player_1_hp%> max=<%=@player_1_max_hp%> ></progress>
   </div>
+  
   <div class="column" id='player2_hud'>
     <h1>PLAYER 2: <%=@player_2_name%></h1>
     <h2><%=@player_2_hp%>/<%=@player_2_max_hp%> HP</h2>
+    <progress id="player_2_health_bar" value=<%=@player_2_hp%> max=<%=@player_2_max_hp%>></progress>
   </div>
 </div> 
