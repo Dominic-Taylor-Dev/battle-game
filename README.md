@@ -86,11 +86,6 @@ I want to see a 'Lose' message if I reach 0HP first
 Domain object model
 ----------
 
-to fill in - currently thinking following objects:
+The concept for the structure is as follows (the diagram itself is a sort of domain object model, but adapted to bring out the MVC structure):
 
-- view
-- game loop
-- win condition
-- player
-- attack
-- turn
+![MVC Overview](assets/mvc_overview.jpg)

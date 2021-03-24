@@ -9,7 +9,7 @@ class Controller < Sinatra::Base
 
   enable :sessions # needed to ensure persistence of player names
 
-  def load_easy_names
+  def load_game_state_easy_names
     @player_1_name = $game.player_1.name
     @player_2_name = $game.player_2.name
     @player_1_hp = $game.player_1.hitpoints
@@ -30,8 +30,8 @@ class Controller < Sinatra::Base
   end
 
   get '/battle' do
-    load_easy_names
-    erb :battle #trying to work out how to merge - atm just battle should be there but considered trying to get a persistent header in a different erb file
+    load_game_state_easy_names
+    erb :battle
   end
 
   post '/attack' do
@@ -40,7 +40,7 @@ class Controller < Sinatra::Base
     else
       attack_type = params[:attack_type] 
       $game.attack(attack_type)
-      load_easy_names
+      load_game_state_easy_names
       erb :attack_result
     end
   end
@@ -49,7 +49,7 @@ class Controller < Sinatra::Base
     $game.next_turn
     attack_type = params[:attack_type] # still needs something to take parameters from battle.erb
     $game.attack(attack_type)
-    load_easy_names
+    load_game_state_easy_names
     if $game.game_over?
       erb :game_over
     else
