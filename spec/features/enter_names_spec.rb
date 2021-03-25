@@ -1,6 +1,8 @@
 feature 'Enter names' do
-  scenario 'submitting names' do
+  scenario 'submitting names, both are then visible' do
     sign_in_and_play
-    expect(page).to have_content 'PLAYER 1: John\nPLAYER 2: Laura'
+    page.should(satisfy do |page|
+      page.has_content?('John') && page.has_content?('Laura')
+    end)
   end
 end

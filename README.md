@@ -11,6 +11,11 @@ How to run
 
 As long as all of the dependencies are installed (see Gemfile), and you are running Ruby 3.0.0, it should be possible to spin up the `app_controller.rb` file (in the `app` directory) by navigating to the directory and running the script with `ruby app_controller.rb`. You should then be able to play the game via your browser (URL: `localhost:4567/` as this is Sinatra, although it should also say which port is being used in the message you get in the terminal)
 
+The test suite
+---------
+
+I very much focussed on feature testing with Capybara, as this was the learning I was trying to reinforce. However, all tests can be run from the root folder with the command `rspec`.
+
 User stories
 --------
 ```
