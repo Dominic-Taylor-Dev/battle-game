@@ -11,6 +11,14 @@ class Game
     # @current_player = turn_tracker.current_player
   end
 
+  def self.create(player_1, player_2) 
+    @game = Game.new(player_1, player_2) # call initialize on self and store it as a class instance variable
+  end
+  
+  def self.instance
+    @game # return the class instance variable @game
+  end
+
   def next_turn
     @turn_tracker.change_player
   end

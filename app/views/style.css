@@ -1,0 +1,43 @@
+h1 { color:black;
+font-family: 'Courier New'; 
+border: 2px solid #ddd;
+border-radius: 10px;
+padding: 10px;
+background-color: #E5D3B3;}
+
+h2 { color:black;
+font-family: 'Courier New'}
+
+form { color:black;
+font-family: 'Courier New'}
+
+button { color:black;
+font-family: 'Courier New';
+border: 2px solid #ddd;
+border-radius: 10px;
+padding: 10px;
+color: white;
+background-color: black;
+}
+
+.avatars {
+  background-image: url('https://pokemondb.net/pokebase/qa-plugin/https-img-proxy/image.php?key=a36daf060a484b9d&url=http%3A%2F%2Fcdn.bulbagarden.net%2Fupload%2F3%2F36%2FAmie_Steel_Wallpaper.png');
+  height: 200px;
+  border: 5px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  vertical-align: middle
+}
+
+.column {
+  float: left;
+  width: 50%;
+  vertical-align: middle
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
