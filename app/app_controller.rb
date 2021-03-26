@@ -33,9 +33,9 @@ class Controller < Sinatra::Base
   end
 
   post '/form_store' do
-    player_1 = Player.new(params[:player_1_name]) # this info will be needed for Game's initialize
-    player_2 = Player.new(params[:player_2_name])
-    @game = Game.create(player_1, player_2) # uses class method 'create', not with player names as the initialize method would, but with player instances
+    first_player = Player.new(params[:player_1_name]) # this info will be needed for Game's initialize
+    second_player = Player.new(params[:player_2_name])
+    @game = Game.create(first_player, second_player) # uses class method 'create', not with player names as the initialize method would, but with player instances
     redirect '/battle'
   end
 
@@ -45,6 +45,7 @@ class Controller < Sinatra::Base
   end
 
   get '/battle' do
+    p "Current player variable: #{@current_player}"
     erb :battle
   end
 

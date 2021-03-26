@@ -16,6 +16,12 @@ The test suite
 
 I very much focussed on feature testing with Capybara, as this was the learning I was trying to reinforce. However, all tests can be run from the root folder with the command `rspec`.
 
+Known bugs
+-------
+The first attack in each battle deals no damage - quite a significant feature bug. My best guess is that this is something to do with the way classes are instantiated (or not) when they are called to populate instance variables in higher level classes, when those higher level classes are themselves instatiated e.g. `Game` instantiates `TurnTracker` when it is itself instantiated. I have not been able to work out how to fix this, however, despite my best efforts looking through the value of all of the variables at the relevant points in the code (most especially in the `post '/attack' do` block of `app_controller`). Using `p` implies that the line `@game.attack(session[:attack_type])` does receive the correct attack argument via the session. However, the method itself then doesn't seem to do anything to either player's HP.
+
+If anyone reads this and can work out the answer, I am totally open to pull requests or suggestions. However, as this was a learning exercise - and I learnt what I wanted to already - I am not planning to debug further.
+
 User stories
 --------
 ```
